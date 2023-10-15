@@ -46,17 +46,6 @@ paid_orders as (
         left join base_customers c on orders.user_id = c.id
 ),
 
--- customer_orders 
---     as (
---         select 
---             base_customers.id as customer_id,
---             min(base_orders.order_date) as first_order_date,
---             max(base_orders.order_date) as most_recent_order_date,
---             count(base_orders.id) as number_of_orders
---         from base_customers
---             left join base_orders on base_orders.user_id = base_customers.id 
---         group by 1
--- ),
 
 clv as (
 
